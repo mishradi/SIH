@@ -47,7 +47,7 @@ def recommendation_internship(candidate_id, n):
     top_scores = candidate_score[top_indices]
     recommendation_df = top_internship.copy()
     recommendation_df["matchscore"] = top_scores
-    return recommendation_df[['internship_id', 'job_title', 'matchscore']]
+    return recommendation_df[['Company_name', 'job_title', 'matchscore','job_description']]
 
 
 
@@ -62,4 +62,4 @@ with open('internship_tfidf_matrix.pkl', 'wb') as f:
 print("\nModel artifacts saved successfully.")
 
 
-print(recommendation_internship("468", 4))
+print(recommendation_internship(122, 10))
